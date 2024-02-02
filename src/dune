@@ -1,0 +1,6 @@
+(executable
+ (name bf)
+ (libraries preprocessing code_prod pp)
+ (promote (until-clean))
+ (flags ())
+)
