@@ -18,6 +18,9 @@ let rec compress = function
         | While (e1, e2) -> While (compress e1, compress e2)
         | Unit -> Unit
 
+let adjust_size p =
+        let a = Array.make 
+
 (*Code compiling with rbx as the pointer*)
 let rec compile_expr = function       
         | Move_ptr (i, e) -> "\taddq $"^string_of_int i^", %rbx\n"^compile_expr e
