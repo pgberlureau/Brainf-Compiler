@@ -1,4 +1,4 @@
 Small brainfuck compiler.
 Cell size is 8 bits.
-The 30 000 cells are stored on the stack, rsp is the current pointer and there is no wrapping on those cells.
+You dispose of a 30000 cells array and the pointer is pointing on the 15000th in the initial state.
 Use make to build the project with dune.

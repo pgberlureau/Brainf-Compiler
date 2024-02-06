@@ -9,17 +9,17 @@
 %%
 
 expression:
-        | l=incr_ptr+ e=expression {Incr_ptr (List.length l, e)} 
-        | l=incr_ptr+ {Incr_ptr (List.length l, Unit)}
+        | l=incr_ptr+ e=expression {Move_ptr (List.length l, e)} 
+        | l=incr_ptr+ {Move_ptr (List.length l, Unit)}
 
-        | l=decr_ptr+ e=expression {Decr_ptr (List.length l, e)}
-        | l=decr_ptr+ {Decr_ptr (List.length l, Unit)}
+        | l=decr_ptr+ e=expression {Move_ptr (-List.length l, e)}
+        | l=decr_ptr+ {Move_ptr (-List.length l, Unit)}
 
-        | l=incr_val+ e=expression {Incr_val (List.length l, e)}
-        | l=incr_val+ {Incr_val (List.length l, Unit)}
+        | l=incr_val+ e=expression {Change_val (List.length l, e)}
+        | l=incr_val+ {Change_val (List.length l, Unit)}
 
-        | l=decr_val+ e=expression {Decr_val (List.length l, e)}
-        | l=decr_val+ {Decr_val (List.length l, Unit)}
+        | l=decr_val+ e=expression {Change_val (-List.length l, e)}
+        | l=decr_val+ {Change_val (-List.length l, Unit)}
 
         | l=print+ e=expression {Print(List.length l,  e)}
         | l=print+ {Print(List.length l,  Unit)}
@@ -29,6 +29,7 @@ expression:
 
         | L_BRACKET e1 = expression R_BRACKET e2 = expression {While (e1,e2)} 
         | L_BRACKET e1 = expression R_BRACKET {e1} 
+
         | EOF { Unit }
 
 incr_ptr:
