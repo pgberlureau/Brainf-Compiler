@@ -1,0 +1,12 @@
+(menhir
+ (modules parser)
+)
+
+(ocamllex
+ (modules lexer)
+)
+
+(library
+ (name preprocessing)
+ (modules parser lexer ast)
+)

@@ -1,0 +1,8 @@
+lib: [
+  "_build/install/default/lib/brainfuck/META"
+  "_build/install/default/lib/brainfuck/dune-package"
+  "_build/install/default/lib/brainfuck/opam"
+]
+doc: [
+  "_build/install/default/doc/brainfuck/README.md"
+]

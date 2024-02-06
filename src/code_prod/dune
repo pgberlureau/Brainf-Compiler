@@ -1,5 +1,5 @@
 (library
  (name code_prod)
  (libraries preprocessing pp)
- (modules X86_64 compile_program)
+ (modules compile_program)
  (flags ()))
