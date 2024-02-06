@@ -1,5 +1,0 @@
-(library
- (name pp)
- (libraries preprocessing)
- (modules pp)
- (flags ()))
